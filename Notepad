@@ -1,0 +1,20 @@
+#include <ButtonConstants.au3>
+#include <EditConstants.au3>
+#include <GUIConstantsEx.au3>
+#include <WindowsConstants.au3>
+
+$hGUI= GUICreate("Note",300,300)
+$hEditb = GUICtrlCreateEdit("",10,10,390,250)
+$hSaveb= GUICtrlCreateButton("Save",100,260, 80,30)
+$hClearb= GUICtrlCreateButton("CLear",10,260, 80,30)
+$hExitb= GUICtrlCreateButton("Exit",190,260, 80,30)
+GUISetState(@SW_SHOW)
+
+While 1
+	Switch GUIGetMsg()
+	        Case $GUI_EVENT_CLOSE,	$hExitb
+		        Exit
+	        Case $hClearb
+		        GUICtrlSetData($hEditb,"")
+	EndSwitch
+WEnd
