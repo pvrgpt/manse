@@ -1,0 +1,23 @@
+#include <GUIConstantsEx.au3>
+Global $MenuBar, $MenuFile, $MenuView, $MenuEdit, $MenuInsert
+$Form1= GUICreate("Word",500,500)
+
+$MenuBar =GUICtrlCreateMenu("",$Form1)
+
+$MenuFile=GUICtrlCreateMenu("File")
+
+$MenuView = GUICtrlCreateMenu("View")
+
+$MenuEdit = GUICtrlCreateMenu("Edit")
+
+$MenuInsert = GUICtrlCreateMenu("Insert")
+
+GUISetState(@SW_SHOW)
+
+While 1
+	Switch GUIGetMsg()
+		
+	        Case $GUI_EVENT_CLOSE
+			Exit
+	EndSwitch
+WEnd		
