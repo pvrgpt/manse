@@ -1,0 +1,16 @@
+#include <MsgBoxConstants.au3>
+#include<StringConstants.au3>
+MsgBox($MB_OK,"Prac", StringRegExp("text",'te[xs]t'))
+MsgBox($MB_OK,"Prac", StringRegExp("test",'t{1}e{1}[sx]{1}t{1}'))
+MsgBox($MB_OK,"Ww",StringRegExp("aaabbbbccc",'c{3}'))
+
+Local $aRes= StringRegExp("My name is Parth",'(Parth)', $STR_REGEXPARRAYMATCH)
+
+If Not @error Then
+	MsgBox($MB_OK,"Result", $aRes[0])
+EndIf
+
+Local $BRes=StringRegExp("my name is ParthRaja",'(Parth)(Raja)', $STR_REGEXPARRAYMATCH)
+If Not @error Then
+	MsgBox($MB_OK,"re",$BRes[0] &' ' & $BRes[1])
+EndIf
